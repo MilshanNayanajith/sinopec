@@ -27,7 +27,7 @@ const CreatePump = () => {
         }
     }
   return (
-    <div className={styles.container}>
+    <div className="flex justify-center py-8">
       <Formik
         initialValues={{ name: '', meter: 0, fuel: '' }}
         validationSchema={validationSchema}
@@ -39,9 +39,9 @@ const CreatePump = () => {
         }}
       >
         {({ isSubmitting }) => (
-          <Form className="max-w-md mx-auto">
+          <Form className="w-1/2">
             <div className="mb-4">
-              <label htmlFor="name" className="block text-gray-700">Name:</label>
+              <label htmlFor="name" className="block text-accent">Name:</label>
               <Field
                 type="text"
                 id="name"
@@ -49,10 +49,10 @@ const CreatePump = () => {
                 className="input input-accent input-md w-full"
                 placeholder="Type here"
               />
-              <ErrorMessage name="name" component="div" className="text-red-500" />
+              <ErrorMessage name="name" component="div" className="text-error" />
             </div>
             <div className="mb-4">
-              <label htmlFor="meter" className="block text-gray-700">Meter:</label>
+              <label htmlFor="meter" className="block text-accent">Meter:</label>
               <Field
                 type="number"
                 id="meter"
@@ -60,10 +60,10 @@ const CreatePump = () => {
                 className="input input-accent input-md w-full"
                 placeholder="Type here"
               />
-              <ErrorMessage name="meter" component="div" className="text-red-500" />
+              <ErrorMessage name="meter" component="div" className="text-error" />
             </div>
             <div className="mb-4">
-              <label htmlFor="fuel" className="block text-gray-700">Fuel:</label>
+              <label htmlFor="fuel" className="block text-accent">Fuel:</label>
               <Field
                 type="text"
                 id="fuel"
@@ -71,11 +71,11 @@ const CreatePump = () => {
                 className="input input-accent input-md w-full"
                 placeholder="Type here"
               />
-              <ErrorMessage name="fuel" component="div" className="text-red-500" />
+              <ErrorMessage name="fuel" component="div" className="text-error" />
             </div>
             <div className="mt-4">
             <button  type="submit"
-                disabled={isSubmitting} className="btn btn-outline btn-accent w-full px-4 py-2">{isSubmitting ? 'Creating...' : 'Create Pump'}</button>
+                disabled={isSubmitting} className="btn btn-primary btn-accent w-full px-4 py-2">{isSubmitting ? 'Creating...' : 'Create Pump'}</button>
 
             </div>
           </Form>
